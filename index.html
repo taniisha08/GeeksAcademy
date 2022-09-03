@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>GeeksAcademy</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<style>
+  .formerror{
+    color: red;
+    font-size: 14px;
+  }
+  .mandatory{
+    color: red;
+    font-size: 12px;
+  }
+  .footer {
+  text-align: center;
+  padding: 3px;
+  background-color: DarkSalmon;
+  color: white;
+}
+</style>
+<body class="bg-light">
+    <nav class="navbar navbar-light" style="background-color: #a2d3f6a7;">
+        
+        <div class="container-fluid"> 
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation" style="border: black;">
+              <span class="navbar-toggler-icon"></span>
+            </button>&nbsp;&nbsp;&nbsp;<div class="d-inline text-primary" style="font-family: Verdana, Geneva, Tahoma, sans-serif;"><h1>GeeksAcademy</h1></div>
+            <span class="navbar-text">
+               <form class="d-flex">
+              
+                    <div class="input-group">
+                      <span class="input-group-text" id="basic-addon1">@</span>
+                      <input type="text" name="username" id="userid" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" style="width: 250px;">&nbsp;
+                      <input type="password" name="password" id="pass" class="form-control" placeholder="Password" aria-label="password" style="width: 200px;">&nbsp;
+                   <button class="btn btn-lg btn-outline-light bg-primary" type="submit" onclick="login()">Login</button></div>
+             
+            </form>
+              </span>
+            <div class="collapse navbar-collapse" id="navbarText">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <!-- <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                </li> -->
+                <li class="nav-item">
+                  <a class="nav-link" href="students.html">Student Community</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+      </nav>
+<div class="container-fluid p-5 bg-light text-white text-center"><br>
+  <img src="geek.png" class="rounded mx-auto d-block" alt="geekimage" style="height: 200px; width: 700px;">
+  <div class="container mt-5 text-dark" style="padding-top: 50px;">
+    <div class="row">
+      <div class="col-sm-6">
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="https://ourcodeworld.com/public-media/articles/articleocw-5c65fbda1ea05.jpg" class="d-block w-100" alt="..." width="640" height="360">
+              </div>
+              <div class="carousel-item">
+                <img src="https://www.simplilearn.com/ice9/webinar_thum_image/CPP_Tutorial.jpg" class="d-block w-100" alt="..." width="640" height="360">
+              </div>
+              <div class="carousel-item">
+                <img src="https://itchronicles.com/wp-content/uploads/2020/11/where-is-ai-used-1024x683.jpg" class="d-block w-100" alt="..." width="640" height="360">
+              </div>
+              <div class="carousel-item">
+                <img src="https://thumbs.dreamstime.com/b/data-science-deep-learning-artificial-intelligence-analysis-internet-modern-technology-concept-130068639.jpg" class="d-block w-100" alt="..." width="640" height="360">
+              </div>
+       
+              <div class="carousel-item">
+                <img src="https://www.insiderintelligence.com/static/5ecb856d09def78da57ec3fac2f6ce5c/7fa24/blockchain.jpg" class="d-block w-100" alt="..." width="640" height="360">
+              </div>
+              <div class="carousel-item">
+                <img src="https://www.zdnet.com/a/img/resize/cfc4b83ef647bebfba629ae1f5d215d412895eba/2020/09/28/6b225a1a-381a-4ceb-b13c-d2d314d41bd7/what-is-the-iot-everything-you-need-to-k-5f6cc13d5f60de4b41b7f3d4-1-sep-28-2020-16-19-38-poster.jpg?auto=webp&fit=cover&height=482&width=856" class="d-block w-100" alt="..." width="640" height="360">
+              </div>
+            </div>
+          </div>
+      </div>
+      <div class="col-sm-6 text-secondary" style="padding-top: 50px;">
+        <h3>Join Our Community</h3>
+       <h4>
+        <p>to explore more in Computer Science domain</p>
+       </h4> 
+       <button type="button" class="btn btn-primary  btn-lg btn-outline-light" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Sign Up here!
+      </button>
+      </div>
+    </div> 
+  </div>
+</div>
+<div class="footer" style="background-color: #a2d3f6a7; height: 100px;padding-top: 10px;margin-top: 7px;">
+ 
+
+</div>
+
+<!-- End of .container -->
+<!-- modal window of create account -->
+<!-- Button trigger modal -->
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title text-dark" id="exampleModalLabel">Create Your Account</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+              <form  name="myform" onsubmit="return validateForm()" id="studentForm">
+                
+                  <div class="mb-3 formdesign" id="inputName">
+                    <label for="fname" class="form-label">Name<span class="mandatory">*</span></label>
+                    <input type="text" class="form-control" name="fname" id="fname">
+                    <div class="formerror"></div>
+                </div>
+                  <div class="mb-3 formdesign" id="inputEmail">
+                    <label for="fmail" class="form-label">Email<span class="mandatory">*</span></label>
+                    <input type="email" class="form-control" name="fmail" id="fmail">
+                    <div class="formerror"></div>
+                </div>
+                  <div class="mb-3 formdesign" id="inputDate">
+                    <label for="fdate" class="form-label">Birthday<span class="mandatory">*</span></label>
+                    <input type="date" class="form-control" name="fdate" id="fdate">
+                    <div class="formerror"></div>
+                </div>
+                <div class="mb-3 formdesign" id="inputGender">
+                  <input type="radio" id="male" name="gender" value="male" checked>
+                  <label for="male">Male</label>
+                  <input type="radio" id="female" name="gender" value="female">
+                  <label for="female">Female</label> 
+                  <input type="radio" id="other" name="gender" value="other">
+                  <label for="other">Others</label> 
+                </div>
+                  <div class="mb-3 formdesign" id="inputPassword">
+                    <label for="fpass" class="form-label">Password<span class="mandatory">*</span></label>
+                    <input type="password" class="form-control" name="fpass" id="fpass">
+                    <div class="formerror"></div>
+                </div>
+                 <div class="mb-3 formdesign" id="inputcPassword">
+                    <label for="fcpass" class="form-label">Confirm Password<span class="mandatory">*</span></label>
+                    <input type="password" class="form-control" name="fcpass">
+                    <div class="formerror"></div>
+                </div>
+              <div class="mb-3 formdesign" id="inputLanguage">
+                <select class="form-select" aria-label="Default select example">
+                  <option value="null" selected>Select Programming Language<span style="color: red;">*</span></option>
+                  <option value="javascript">Javascript</option>
+                  <option value="java">Java</option>
+                  <option value="python">Python</option>
+                  <option value="C">C</option>
+                  <option value="c++">C++</option>
+                </select>
+                <div class="formerror"></div>
+              </div>
+              
+                <!-- <div class="mb-3"> -->
+                  <div class="mb-3 formdesign" id="inputImage">
+                    <label for="fimage" class="form-label">Upload Profile Picture</label>
+                    <input type="file" class="form-control" name="fimage" id="fimage">
+                    <div class="formerror"></div>
+                </div>
+                <!-- </div> -->
+                <div class="mb-3">
+                  <button type="submit" class="btn btn-primary btn-outline-light">Create Account</button>
+                </div>       
+            </form>
+        </div>
+        <!-- <div class="modal-footer">
+          <button type="button" class="btn btn-primary">Create</button>
+        </div> -->
+      </div>
+    </div>
+  </div>
+<script src="script.js"></script>
+</body>
+</html>
